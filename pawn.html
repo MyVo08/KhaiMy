@@ -24,9 +24,9 @@
         <ul class="dropdown-menu">
           <li><a href="pawn.html">♟ Pawn · Academic</a></li>
           <li><a href="knight.html">♞ Knight · Research</a></li>
-          <li><a href="bishop.html">♝ Bishop · Communication</a></li>
-          <li><a href="rook.html">♜ Rook · Leadership</a></li>
           <li><a href="queen.html">♛ Queen · Impact</a></li>
+          <li><a href="rook.html">♜ Rook · Leadership</a></li>
+          <li><a href="bishop.html">♝ Bishop · Communication</a></li>
         </ul>
       </li>
       <li><a href="aspiration.html"                >My Aspiration</a></li>
@@ -34,17 +34,19 @@
   </div>
 </nav>
 
-<div class="page">
+<div class="page pawn-page">
 
-  <a href="journey.html" class="back-link">← My Journey</a>
+  <a href="journey.html" class="back-link" style="margin-bottom: 0;">← My Journey</a>
 
   <!-- HERO -->
-  <div class="piece-hero">
-    <div class="piece-icon-wrap">♟</div>
+  <div style="text-align:center;">
+    <div style="display:inline-flex; align-items:center; gap:.75rem; margin-bottom: 0;">
+      <div class="piece-icon-wrap" style="font-size:3rem;">♟</div>
+      <span class="label piece-hero-title" style="margin-top:0;">Pawn · Academic</span>
+    </div>
     <div>
-      <span class="label">Pawn · Academic</span>
-      <h2>Always Moving Forward,<br>One Step at a Time</h2>
-      <p class="piece-intro-text">
+      <img src="images/pawn.png" alt="pawn default holder" style="width:40%; height:auto; display:block; margin: 0 auto .75rem;">
+      <p class="piece-intro-text" style="text-align:center; padding-bottom:1.25rem; border-bottom:1px solid var(--border);">
         Like a pawn that always moves forward one step at a time, I give my best to every
         goal I pursue and always strive to move one step further.
       </p>
@@ -101,7 +103,7 @@
 
   <!-- REFLECTION -->
   <div class="story-block">
-    <blockquote>
+    <blockquote class="fly-in">
       <p>Upon reflection, grades or awards were never the destination of my learning
       journey. Instead, they became the foundation that inspired me to ask bigger
       questions, apply knowledge to solve real-world challenges, and eventually take
@@ -117,7 +119,6 @@
   <!-- PIECES NAV -->
   <div class="pieces-nav">
     <span class="label">Get to Know Me Through the Pieces</span>
-    <h3>Every piece has a purpose.</h3>
     <p class="pieces-hint">Click each piece to discover its story.</p>
     <div class="pieces-grid">
       <a href="pawn.html" class="piece-card active">
@@ -130,20 +131,20 @@
         <span class="piece-name">Knight</span>
         <span class="piece-trait">Research</span>
       </a>
-      <a href="bishop.html" class="piece-card">
-        <span class="piece-symbol">♝</span>
-        <span class="piece-name">Bishop</span>
-        <span class="piece-trait">Communication</span>
+      <a href="queen.html" class="piece-card">
+        <span class="piece-symbol">♛</span>
+        <span class="piece-name">Queen</span>
+        <span class="piece-trait">Impact</span>
       </a>
       <a href="rook.html" class="piece-card">
         <span class="piece-symbol">♜</span>
         <span class="piece-name">Rook</span>
         <span class="piece-trait">Leadership</span>
       </a>
-      <a href="queen.html" class="piece-card">
-        <span class="piece-symbol">♛</span>
-        <span class="piece-name">Queen</span>
-        <span class="piece-trait">Impact</span>
+      <a href="bishop.html" class="piece-card">
+        <span class="piece-symbol">♝</span>
+        <span class="piece-name">Bishop</span>
+        <span class="piece-trait">Communication</span>
       </a>
     </div>
   </div>
@@ -156,6 +157,21 @@
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fly-in').forEach((el, i) => {
+    el.dataset.delay = i * 120;
+    observer.observe(el);
+  });
 </script>
 </body>
 </html>

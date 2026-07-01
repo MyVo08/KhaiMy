@@ -387,7 +387,7 @@ ul.bullets li { font-size: .9rem; margin-bottom: .22rem; }
 .pieces-nav .label { margin-bottom: .4rem; }
 
 .pieces-hint {
-  font-size: .9rem;
+  font-size: 1rem;
   color: var(--muted);
   font-style: italic;
   margin-bottom: 1.5rem;
@@ -398,6 +398,42 @@ ul.bullets li { font-size: .9rem; margin-bottom: .22rem; }
 .journey-page > h2        { font-size: 1.3rem; }
 .journey-page .story-intro { font-size: 1.1rem; color: var(--text); }
 .journey-page .story-block p { font-size: 1.1rem; }
+
+/* ── PAWN PAGE ────────────────────────────────────────── */
+.pawn-page .story-block p { font-size: 1.1rem; }
+.pawn-page blockquote     { border-radius: 20px; }
+.pawn-page blockquote p   { font-size: 1.1rem; }
+.pawn-page .story-block .label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  letter-spacing: normal;
+  text-transform: none;
+}
+.pawn-page .stats-row {
+  justify-content: center;
+  gap: 2rem;
+}
+.pawn-page .stat-box    { padding: 1.45rem 2.1rem; min-width: 172px; border-radius: 12px; }
+.pawn-page .stat-label  { font-size: 1.36rem; }
+.pawn-page .stat-value  { font-size: 2.74rem; }
+.pawn-page .stat-denom  { font-size: 1.49rem; }
+
+/* ── KNIGHT PAGE ───────────────────────────────────────── */
+.knight-page .story-block p { font-size: 1.1rem; }
+.knight-page .story-block .label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  letter-spacing: normal;
+  text-transform: none;
+}
+.knight-page blockquote   { border-radius: 20px; }
+.knight-page blockquote p { font-size: 1.1rem; }
+.knight-page .insight-box { border-radius: 20px; font-size: 1.1rem; }
+.knight-page .quote-photo .photo-side { flex: 0 0 270px; }
 
 /* ── JOURNEY PAGE — section label headings ────────────── */
 .journey-page .story-block .label,
@@ -411,11 +447,30 @@ ul.bullets li { font-size: .9rem; margin-bottom: .22rem; }
 }
 .journey-page > .label {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(calc(2rem - 9px), 3.8vw, calc(2.67rem - 9px));
+  font-size: clamp(calc(2rem + 14px), 3.8vw, calc(2.67rem + 14px));
   font-weight: 700;
-  letter-spacing: normal;
-  text-transform: none;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-align: center;
 }
+
+.quote-photo {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+}
+.quote-photo blockquote { flex: 1; margin: 0; }
+.quote-photo .photo-side {
+  flex: 0 0 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  min-height: 100%;
+}
+.quote-photo .photo-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.journey-page blockquote cite { font-size: calc(.8rem + 2px); }
 
 a.piece-card {
   text-decoration: none;
@@ -452,6 +507,18 @@ a.piece-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(30
   user-select: none;
 }
 
+.piece-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(calc(2rem + 14px), 3.8vw, calc(2.67rem + 14px));
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--green-mid);
+  display: block;
+  margin-top: .4rem;
+}
+
 .piece-intro-text {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 1.15rem;
@@ -463,6 +530,7 @@ a.piece-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(30
 
 .stats-row {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
   margin: 1.75rem 0 2.5rem;

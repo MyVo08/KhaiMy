@@ -24,9 +24,9 @@
         <ul class="dropdown-menu">
           <li><a href="pawn.html">♟ Pawn · Academic</a></li>
           <li><a href="knight.html">♞ Knight · Research</a></li>
-          <li><a href="bishop.html">♝ Bishop · Communication</a></li>
-          <li><a href="rook.html">♜ Rook · Leadership</a></li>
           <li><a href="queen.html">♛ Queen · Impact</a></li>
+          <li><a href="rook.html">♜ Rook · Leadership</a></li>
+          <li><a href="bishop.html">♝ Bishop · Communication</a></li>
         </ul>
       </li>
       <li><a href="aspiration.html"                >My Aspiration</a></li>
@@ -34,17 +34,19 @@
   </div>
 </nav>
 
-<div class="page">
+<div class="page knight-page">
 
-  <a href="journey.html" class="back-link">← My Journey</a>
+  <a href="journey.html" class="back-link" style="margin-bottom: 0;">← My Journey</a>
 
   <!-- HERO -->
-  <div class="piece-hero">
-    <div class="piece-icon-wrap">♞</div>
+  <div style="text-align:center;">
+    <div style="display:inline-flex; align-items:center; gap:.75rem; margin-bottom: 0;">
+      <div class="piece-icon-wrap" style="font-size:3rem;">♞</div>
+      <span class="label piece-hero-title" style="margin-top:0;">Knight · Research</span>
+    </div>
     <div>
-      <span class="label">Knight · Research</span>
-      <h2>Building a Geography Board Game for<br>Visually Impaired Students in Ho Chi Minh City</h2>
-      <p class="piece-intro-text">
+      <img src="images/knight.jpg" alt="pawn default holder" style="width:40%; height:auto; display:block; margin: 0 auto .75rem;">
+      <p class="piece-intro-text" style="text-align:center; padding-bottom:1.25rem; border-bottom:1px solid var(--border);">
         Like a knight moving creatively in an L-shape, I used creative thinking and
         innovation to address recreational and geographical barriers in my research
         project for visually impaired students.
@@ -55,11 +57,18 @@
   <!-- INTRO -->
   <div class="story-block">
     <span class="label">Third Prize — Ho Chi Minh City Science &amp; Engineering Fair</span>
-    <p>Together with my teammate, I conducted a research project on designing an accessible
-    educational and recreational board game for visually impaired children.</p>
-    <p>Through combining tactile gameplay, Braille, and audio storytelling, the project
-    aimed to transform geography learning into an experience that is not only accessible,
-    but also engaging, interactive, and enjoyable.</p>
+    <div class="quote-photo">
+      <div>
+        <p>Together with my teammate, I conducted a research project on designing an accessible
+        educational and recreational board game for visually impaired children.</p>
+        <p>Through combining tactile gameplay, Braille, and audio storytelling, the project
+        aimed to transform geography learning into an experience that is not only accessible,
+        but also engaging, interactive, and enjoyable.</p>
+      </div>
+      <div class="photo-side">
+        <img src="images/HCMCpicture.jpg" alt="award third price in HCMC">
+      </div>
+    </div>
   </div>
 
   <!-- RESEARCH PROCESS -->
@@ -67,40 +76,21 @@
     <span class="label">My Research Process</span>
     <h3>From Understanding to Refinement</h3>
 
-    <div class="model-cards">
-      <div class="model-card">
-        <div class="model-num">01</div>
-        <h3>Understanding the Problem</h3>
-        <ul class="icon-list">
-          <li>📖 Literature Review</li>
-          <li>📝 Surveys &amp; Questionnaires</li>
-          <li>🎤 Interviews with Teachers and Students</li>
-        </ul>
+    <!-- 01 -->
+    <h3 style="font-size:1.1rem; font-weight:700; margin:1.5rem 0 1rem;">01. Understanding the Problem</h3>
+    <div style="display:flex; gap:1.5rem; align-items:flex-start;">
+      <div style="flex:0 0 270px;">
+        <img src="images/knightInterview.jpg" alt="interview HCMC" style="width:100%; border-radius:10px; display:block;">
       </div>
-      <div class="model-card">
-        <div class="model-num">02</div>
-        <h3>Designing our Solution</h3>
-        <ul class="icon-list">
-          <li>🎲 Boardgame Design</li>
-          <li>⠿ Braille &amp; Tactile Components</li>
-          <li>🔊 Audio Storytelling</li>
-        </ul>
-      </div>
-      <div class="model-card">
-        <div class="model-num">03</div>
-        <h3>Testing &amp; Refinement</h3>
-        <ul class="icon-list">
-          <li>👧 User Testing with 20 Students</li>
-          <li>💬 Collecting Feedback</li>
-          <li>✏️ Improving the Gameplay</li>
-        </ul>
-      </div>
+      <ul class="icon-list" style="margin:0;">
+        <li>📖 Literature Review</li>
+        <li>📝 Surveys &amp; Questionnaires</li>
+        <li>🎤 Interviews with Teachers and Students</li>
+      </ul>
     </div>
+    <p class="photo-caption" style="margin-top:.5rem;">Me interviewing a visually impaired child at Nguyen Dinh Chieu School for the Blind</p>
 
-    <div class="photo-box" style="aspect-ratio:16/9; max-width:600px;">[ Photo: interviewing a visually impaired student ]</div>
-    <p class="photo-caption">Me interviewing a visually impaired child at Nguyen Dinh Chieu School for the Blind</p>
-
-    <p style="margin-top:1.75rem;">Before designing any solution, we focused on understanding the real context of
+    <p style="margin-top:1.25rem;">Before designing any solution, we focused on understanding the real context of
     visually impaired children. Through research and field interviews at Nguyen Dinh Chieu
     School for the Blind and Nhat Hong Center for the Visually Impaired, I noticed two key
     insights:</p>
@@ -111,12 +101,31 @@
       often introduced through visual images rather than interactive experiences.</li>
     </ul>
 
-    <div class="insight-box">
+    <!-- Detail picture -->
+    <div style="display:flex; gap:1rem; justify-content:center; margin:1.5rem 0;">
+      <img src="images/knightdetail11.png" alt="Detail table to prove understand 1 1" style="width:48%; border-radius:8px; object-fit:cover; display:block;">
+      <img src="images/knightdetail12.png" alt="Detail table to prove understand 1 2" style="width:48%; border-radius:8px; object-fit:cover; display:block;">
+    </div>
+
+    <div class="insight-box fly-in">
       These insights helped us redefine the problem from <strong>"lack of learning tools"</strong>
       to <strong>"lack of engaging and accessible ways to experience knowledge."</strong>
     </div>
 
-    <p>Based on our findings, we designed an accessible geography board game that integrates
+    <!-- 02 -->
+    <h3 style="font-size:1.1rem; font-weight:700; margin:1.5rem 0 1rem;">02. Designing our Solution</h3>
+    <div style="display:flex; gap:1.5rem; align-items:flex-start;">
+      <div style="flex:0 0 270px;">
+        <div class="photo-box" style="aspect-ratio:4/3;">[ Board game photo ]</div>
+      </div>
+      <ul class="icon-list" style="margin:0;">
+        <li>🎲 Boardgame Design</li>
+        <li>⠿ Braille &amp; Tactile Components</li>
+        <li>🔊 Audio Storytelling</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:1.25rem;">Based on our findings, we designed an accessible geography board game that integrates
     tactile materials, Braille, and audio storytelling. The goal was to turn knowledge about
     faraway landmarks and cultures into something students could physically interact with,
     making learning more accessible and enjoyable.</p>
@@ -133,13 +142,25 @@
       to make students feel as if they were truly exploring each destination.</li>
     </ul>
 
-    <div class="photos-strip">
-      <div class="photo-box">[ Game pieces / characters ]</div>
-      <div class="photo-box">[ Board game photo ]</div>
-      <div class="photo-box">[ Gameplay video ]</div>
+    <div style="display:flex; gap:1rem; justify-content:center; margin:1.5rem 0;">
+      <div class="photo-box" style="width:48%;">[ Game pieces / characters ]</div>
+      <div class="photo-box" style="width:48%;">[ Board game photo ]</div>
     </div>
 
-    <p style="margin-top:1.75rem;">Instead of stopping at the first prototype, we tested the
+    <!-- 03 -->
+    <h3 style="font-size:1.1rem; font-weight:700; margin:1.5rem 0 1rem;">03. Testing &amp; Refinement</h3>
+    <div style="display:flex; gap:1.5rem; align-items:flex-start;">
+      <div style="flex:0 0 270px;">
+        <div class="photo-box" style="aspect-ratio:4/3;">[ Testing photo ]</div>
+      </div>
+      <ul class="icon-list" style="margin:0;">
+        <li>👧 User Testing with 20 Students</li>
+        <li>💬 Collecting Feedback</li>
+        <li>✏️ Improving the Gameplay</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:1.25rem;">Instead of stopping at the first prototype, we tested the
     board game with 20 visually impaired students. We collected feedback from both students
     and teachers to evaluate the game's accessibility, ease of play, learning effectiveness,
     and entertainment value, then improved the game based on their suggestions and
@@ -185,7 +206,7 @@
     refining the board game with visually impaired students, I realised that the most
     meaningful ideas are not created for people, but with them.</p>
 
-    <blockquote>
+    <blockquote class="fly-in">
       <p>More importantly, this project changed how I thought about education. I came to
       believe that learning should be engaging, inclusive, and accessible, regardless of a
       learner's abilities. That belief later became the foundation of Lem.</p>
@@ -200,7 +221,6 @@
   <!-- PIECES NAV -->
   <div class="pieces-nav">
     <span class="label">Get to Know Me Through the Pieces</span>
-    <h3>Every piece has a purpose.</h3>
     <p class="pieces-hint">Click each piece to discover its story.</p>
     <div class="pieces-grid">
       <a href="pawn.html" class="piece-card">
@@ -213,20 +233,20 @@
         <span class="piece-name">Knight</span>
         <span class="piece-trait">Research</span>
       </a>
-      <a href="bishop.html" class="piece-card">
-        <span class="piece-symbol">♝</span>
-        <span class="piece-name">Bishop</span>
-        <span class="piece-trait">Communication</span>
+      <a href="queen.html" class="piece-card">
+        <span class="piece-symbol">♛</span>
+        <span class="piece-name">Queen</span>
+        <span class="piece-trait">Impact</span>
       </a>
       <a href="rook.html" class="piece-card">
         <span class="piece-symbol">♜</span>
         <span class="piece-name">Rook</span>
         <span class="piece-trait">Leadership</span>
       </a>
-      <a href="queen.html" class="piece-card">
-        <span class="piece-symbol">♛</span>
-        <span class="piece-name">Queen</span>
-        <span class="piece-trait">Impact</span>
+      <a href="bishop.html" class="piece-card">
+        <span class="piece-symbol">♝</span>
+        <span class="piece-name">Bishop</span>
+        <span class="piece-trait">Communication</span>
       </a>
     </div>
   </div>
@@ -239,6 +259,21 @@
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fly-in').forEach((el, i) => {
+    el.dataset.delay = i * 120;
+    observer.observe(el);
+  });
 </script>
 </body>
 </html>

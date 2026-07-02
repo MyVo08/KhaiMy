@@ -422,6 +422,7 @@ ul.bullets li { font-size: .9rem; margin-bottom: .22rem; }
 
 /* ── KNIGHT PAGE ───────────────────────────────────────── */
 .knight-page .story-block p { font-size: 1.1rem; }
+.knight-page ul.icon-list li { font-size: 1.1rem; }
 .knight-page .story-block .label {
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
@@ -434,6 +435,44 @@ ul.bullets li { font-size: .9rem; margin-bottom: .22rem; }
 .knight-page blockquote p { font-size: 1.1rem; }
 .knight-page .insight-box { border-radius: 20px; font-size: 1.1rem; }
 .knight-page .quote-photo .photo-side { flex: 0 0 270px; }
+
+/* ── BISHOP PAGE ───────────────────────────────────────── */
+.bishop-page .story-block p { font-size: 1.1rem; }
+.bishop-page ul.bullets li  { font-size: 1.1rem; }
+.bishop-page .story-block .label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  letter-spacing: normal;
+  text-transform: none;
+}
+.bishop-page .event-block h4       { font-size: 1.15rem; }
+.bishop-page .event-block .event-sub { font-size: .95rem; }
+.bishop-page blockquote   { border-radius: 20px; }
+.bishop-page blockquote p { font-size: 1.1rem; }
+.bishop-page .model-card  { padding: .5rem .75rem; }
+
+/* ── ROOK PAGE ─────────────────────────────────────────── */
+.rook-page .story-block p { font-size: 1.1rem; }
+.rook-page ul.bullets li  { font-size: 1.1rem; }
+.rook-page .story-block .label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  letter-spacing: normal;
+  text-transform: none;
+}
+.rook-page .event-block h4       { font-size: 1.15rem; }
+.rook-page .event-block .event-sub { font-size: .95rem; }
+.rook-page blockquote   { border-radius: 20px; }
+.rook-page blockquote p { font-size: 1.1rem; }
+.rook-page .stats-row   { justify-content: center; gap: 2rem; align-items: stretch; }
+.rook-page .stat-box    { min-width: 172px; padding: .75rem 1.4rem; border-radius: 12px; text-align: center; }
+.rook-page .stat-label  { font-size: .4rem; }
+.rook-page .stat-value  { font-size: 1.45rem; }
+.rook-page .stat-denom  { font-size: .5rem; }
 
 /* ── JOURNEY PAGE — section label headings ────────────── */
 .journey-page .story-block .label,
@@ -645,7 +684,12 @@ ul.icon-list li { font-size: .88rem; color: var(--text); margin-bottom: .4rem; }
   transform: translateX(-48px);
   transition: opacity .6s ease, transform .6s ease;
 }
-.fly-in.visible {
+.fly-in-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.fly-in.visible, .fly-in-right.visible {
   opacity: 1;
   transform: translateX(0);
 }

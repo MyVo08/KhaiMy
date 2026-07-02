@@ -34,17 +34,19 @@
   </div>
 </nav>
 
-<div class="page">
+<div class="page bishop-page">
 
   <a href="journey.html" class="back-link">← My Journey</a>
 
   <!-- HERO -->
-  <div class="piece-hero">
-    <div class="piece-icon-wrap">♝</div>
+  <div style="text-align:center;">
+    <div style="display:inline-flex; align-items:center; gap:.75rem; margin-bottom: 0;">
+      <div class="piece-icon-wrap" style="font-size:3rem;">♝</div>
+      <span class="label piece-hero-title" style="margin-top:0;">Bishop · Communication</span>
+    </div>
     <div>
-      <span class="label">Bishop · Communication</span>
-      <h2>Chong Chong Tre Project</h2>
-      <p class="piece-intro-text">
+      <img src="images/knight.jpg" alt="pawn default holder" style="width:320px; height:auto; display:block; margin: 0 auto .75rem;">
+      <p class="piece-intro-text" style="text-align:center; padding-bottom:1.25rem; border-bottom:1px solid var(--border);">
         Like a bishop extending its reach across the board through diagonals, I used
         communication to extend Chong Chong Tre's impact — promoting its stories
         with more people and encouraging meaningful participation.
@@ -54,17 +56,32 @@
 
   <!-- INTRO -->
   <div class="story-block">
-    <p>Chong Chong Tre is a non-profit educational initiative that provides free
-    English education and meaningful learning experiences for underprivileged
-    children in Ho Chi Minh City. Through weekly classes, seasonal events, and
-    creative workshops, the project builds an inclusive community where children can
-    learn with confidence, creativity, and joy.</p>
+    <div style="display:flex; gap:1.5rem; align-items:center;">
+      <img src="images/ChongChongTrelogo.png" alt="Chong Chong Tre logo" style="flex:0 0 120px; width:120px; height:auto; display:block;">
+      <p style="margin:0;">Chong Chong Tre is a non-profit educational initiative that provides free
+      English education and meaningful learning experiences for underprivileged
+      children in Ho Chi Minh City. Through weekly classes, seasonal events, and
+      creative workshops, the project builds an inclusive community where children can
+      learn with confidence, creativity, and joy.</p>
+    </div>
 
-    <div class="photos-strip">
-      <div class="photo-box">[ Weekly classes ]</div>
-      <div class="photo-box">[ Creative workshops ]</div>
-      <div class="photo-box">[ Mid-Autumn Festival ]</div>
-      <div class="photo-box">[ Tet Festival ]</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.75rem 0;">
+      <div>
+        <img src="images/weekly classes.jpg" alt="weekly class" style="width:100%; height:200px; object-fit:cover; border-radius:8px; display:block;">
+        <p class="photo-caption">Weekly classes</p>
+      </div>
+      <div>
+        <img src="images/creative workshop.jpg" alt="creative workshops" style="width:100%; height:200px; object-fit:cover; border-radius:8px; display:block;">
+        <p class="photo-caption">Creative workshops</p>
+      </div>
+      <div>
+        <img src="images/Mid Autumn Festival.png" alt="Mid Autumn Festival" style="width:100%; height:200px; object-fit:cover; border-radius:8px; display:block;">
+        <p class="photo-caption">Mid-Autumn Festival</p>
+      </div>
+      <div>
+        <img src="images/Tet Festival.jpg" alt="tet Festival" style="width:100%; height:200px; object-fit:cover; border-radius:8px; display:block;">
+        <p class="photo-caption">Tet Festival</p>
+      </div>
     </div>
   </div>
 
@@ -82,12 +99,14 @@
       online.</p>
     </div>
 
-    <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin:1.75rem 0 1rem;">Core Member of Media — Communications Department</p>
+    <span class="label" style="display:block; margin-top:1.75rem;">Core Member of Media — Communications Department</span>
 
     <div class="event-block">
-      <h4>Content Writer</h4>
-      <p class="event-sub">2024 – 2025</p>
-      <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin-bottom:.5rem;">Responsibilities</p>
+      <div style="display:flex; justify-content:space-between; align-items:baseline;">
+        <h4 style="margin-bottom:0;">Content Writer</h4>
+        <span class="event-sub" style="margin-bottom:0;">2024 – 2025</span>
+      </div>
+      <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin:1rem 0 .5rem;">Responsibilities</p>
       <ul class="bullets">
         <li>Wrote social media content to promote the project's classes and community events.</li>
         <li>Turned everyday activities into stories that captured attention and encouraged engagement.</li>
@@ -103,9 +122,11 @@
     </div>
 
     <div class="event-block">
-      <h4>Social Content (Planning Team)</h4>
-      <p class="event-sub">2025 – 2026</p>
-      <p>Moving beyond content creation, I joined the Planning Team as a Social
+      <div style="display:flex; justify-content:space-between; align-items:baseline;">
+        <h4 style="margin-bottom:0;">Social Content (Planning Team)</h4>
+        <span class="event-sub" style="margin-bottom:0;">2025 – 2026</span>
+      </div>
+      <p style="margin-top:.6rem;">Moving beyond content creation, I joined the Planning Team as a Social
       Content, where I helped plan and coordinate communication campaigns across the
       project's social media platforms.</p>
       <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin-bottom:.5rem;">Responsibilities</p>
@@ -114,8 +135,10 @@
         <li>Assigned tasks and coordinated deadlines across writers, designers, and video editors.</li>
         <li>Reviewed content, provided feedback and managed content publishing across social media platforms.</li>
       </ul>
+    </div>
 
-      <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin:1.25rem 0 .5rem;">Planning Team Leader (3 Monthly Rotations)</p>
+    <div class="event-block">
+      <h4>Planning Team Leader (3 Monthly Rotations)</h4>
       <p>Each month, one member was selected to lead the Planning Team. During my
       three rotations as a leader, I was responsible for guiding both the team's
       strategy and execution.</p>
@@ -136,49 +159,41 @@
   <!-- HIGHLIGHT CAMPAIGN -->
   <div class="story-block">
     <span class="label">Highlight Campaign</span>
-    <h3>Trạm Hè (Summer Camp) 2025 — Volunteer Recruitment</h3>
 
-    <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin-bottom:.5rem;">Challenge</p>
-    <p>How do we encourage university students to volunteer for an event from a
-    non-profit educational project?</p>
-    <div class="insight-box">
-      Beyond promoting the event itself, we needed to understand what students were
-      looking for — from extracurricular credits to a welcoming community where they
-      could feel valued, connected, and make a meaningful impact.
+    <div class="event-block">
+      <h3>Trạm Hè (Summer Camp) 2025 — Volunteer Recruitment</h3>
+
+      <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin-bottom:.5rem;">Challenge</p>
+      <div class="insight-box fly-in">
+        <p style="font-weight:600; margin-bottom:.5rem;">How do we encourage university students to volunteer for an event from a non-profit educational project?</p>
+        Beyond promoting the event itself, we needed to understand what students were
+        looking for — from extracurricular credits to a welcoming community where they
+        could feel valued, connected, and make a meaningful impact.
+      </div>
+
+      <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin:1.5rem 0 .5rem;">Strategy</p>
+      <p>Rather than relying on recruitment posts alone, we built the campaign around
+      the volunteer experience.</p>
+
+      <div class="model-cards">
+        <div class="model-card">
+          <h3>Recruitment Post</h3>
+          <p style="font-size:.85rem; color:var(--muted);">Introduced the event and its activities.</p>
+        </div>
+        <div class="model-card">
+          <h3>Why Trạm Hè?</h3>
+          <p style="font-size:.85rem; color:var(--muted);">Highlighted the friendships, memories, and personal growth volunteers could gain.</p>
+        </div>
+        <div class="model-card">
+          <h3>Volunteer Stories</h3>
+          <p style="font-size:.85rem; color:var(--muted);">Shared authentic stories from previous volunteers to build trust and encourage applications.</p>
+        </div>
+      </div>
+
+      <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin-bottom:.5rem;">Outcome</p>
+      <p>Reached 5,000+ people and successfully recruited 30 volunteers for Chong
+      Chong Tre's Summer Camp 2025.</p>
     </div>
-
-    <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin:1.5rem 0 .5rem;">Strategy</p>
-    <p>Rather than relying on recruitment posts alone, we built the campaign around
-    the volunteer experience.</p>
-
-    <div class="model-cards">
-      <div class="model-card">
-        <h3>Recruitment Post</h3>
-        <p style="font-size:.85rem; color:var(--muted);">Introduced the event and its activities.</p>
-      </div>
-      <div class="model-card">
-        <h3>Why Trạm Hè?</h3>
-        <p style="font-size:.85rem; color:var(--muted);">Highlighted the friendships, memories, and personal growth volunteers could gain.</p>
-      </div>
-      <div class="model-card">
-        <h3>Volunteer Stories</h3>
-        <p style="font-size:.85rem; color:var(--muted);">Shared authentic stories from previous volunteers to build trust and encourage applications.</p>
-      </div>
-    </div>
-
-    <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin-bottom:.5rem;">Outcome</p>
-    <p>Reached 5,000+ people and successfully recruited 30 volunteers for Chong
-    Chong Tre's Summer Camp 2025.</p>
-  </div>
-
-  <!-- OTHER POSTS -->
-  <div class="story-block">
-    <span class="label">Other Posts</span>
-    <ul class="bullets">
-      <li>Educational Content</li>
-      <li>Brand Storytelling</li>
-      <li>Event Recap</li>
-    </ul>
   </div>
 
   <!-- RESULTS -->
@@ -203,14 +218,13 @@
   <!-- REFLECTION -->
   <div class="story-block">
     <span class="label">What This Experience Taught Me</span>
-    <p><strong>Communications:</strong> I learned how to find inspiration beyond
-    social media trends, understand what different audiences cared about, and
-    transform those insights into content ideas that communicated the project's
-    message. More importantly, this experience taught me to think beyond individual
-    posts — planning content that worked together as one consistent campaign with a
-    clear purpose.</p>
-
-    <blockquote>
+    <blockquote class="fly-in-right">
+      <p><strong>Communications:</strong> I learned how to find inspiration beyond
+      social media trends, understand what different audiences cared about, and
+      transform those insights into content ideas that communicated the project's
+      message. More importantly, this experience taught me to think beyond individual
+      posts — planning content that worked together as one consistent campaign with a
+      clear purpose.</p>
       <p><strong>Leadership:</strong> I realised that leading a team meant more than
       coordinating tasks. It required continuously learning, bringing fresh ideas to
       the team, refining our workflows, and creating an environment where everyone
@@ -261,6 +275,21 @@
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fly-in, .fly-in-right').forEach((el, i) => {
+    el.dataset.delay = i * 120;
+    observer.observe(el);
+  });
 </script>
 </body>
 </html>

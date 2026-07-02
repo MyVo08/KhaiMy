@@ -34,40 +34,96 @@
   </div>
 </nav>
 
-<div class="page">
-  <div class="hero">
-    <p class="hero-eyebrow">Portfolio — Võ Đình Khải My</p>
-    <h1>My Vo</h1>
+<section class="index-banner">
+  <img src="images/test.jpg" alt="test" class="index-banner-img">
+  <div class="index-banner-overlay">
+    <p class="index-banner-quote">Every child has a story worth telling and a future worth building.</p>
+  </div>
+</section>
 
-    <p class="hero-belief">
-      Every child deserves not only access to education, but the opportunity to enjoy
-      learning, discover their potential, and create value for others.
-    </p>
+<!-- HERO — cream bg -->
+<section class="idx-section">
+  <div class="idx-inner">
+    <div class="hero fly-in">
+      <h1>Võ Đình Khải My</h1>
+      <div class="hero-photo">
+        <img src="images/avatarMy.JPG" alt="Võ Đình Khải My">
+      </div>
+      <p class="hero-belief">Ambitious Learner · Community Builder · Social Contributor</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Replace [Trait X] with your actual non-generic traits -->
-    <div class="traits">
-      <div class="trait"><span class="trait-icon">♟</span> [Trait 1]</div>
-      <div class="trait"><span class="trait-icon">♜</span> [Trait 2]</div>
-      <div class="trait"><span class="trait-icon">♛</span> [Trait 3]</div>
+<!-- ABOUT ME — white bg -->
+<section class="idx-section idx-section--alt">
+  <div class="idx-inner fly-in-right" style="text-align:center;">
+    <span class="idx-label">ABOUT ME</span>
+    <p class="idx-body">My name is Vo Dinh Khai My, an ambitious and energetic 18-year-old who enjoys learning, taking on new challenges, and creating meaningful impact. I believe every child deserves the opportunity not only to learn, but also to create, contribute, and shape their own future. My aspiration is to build a social enterprise that empowers visually impaired children to become storytellers, contributors, and cultural ambassadors through inclusive learning experiences.</p>
+  </div>
+</section>
+
+<!-- WHAT DEFINES ME — cream bg -->
+<section class="idx-section">
+  <div class="idx-inner">
+    <span class="idx-label" style="display:block; text-align:center;">WHAT DEFINES ME</span>
+
+    <div class="define-row fly-in">
+      <div class="define-text">
+        <h3>Ambitious Learner</h3>
+        <p>I believe meaningful impact begins with strong foundations. Whether in academics, competitive chess, or research, I constantly challenge myself to pursue excellence so I can create greater opportunities for others.</p>
+      </div>
+      <div class="define-img define-img--tilt-left">
+        <img src="images/studywithMe.jpg" alt="Ambitious Learner">
+      </div>
     </div>
 
-    <p class="hero-hook">
-      How can learning become something every child genuinely enjoys,
-      regardless of their background or abilities?
-    </p>
-
-    <div class="hero-photo">
-      <img src="images/hero.jpg" alt="My Vo"
-           onerror="this.parentElement.innerHTML='[ Drop your photo into the images/ folder as hero.jpg ]'">
+    <div class="define-row define-row--reverse fly-in-right">
+      <div class="define-text">
+        <h3>Purposeful Leader</h3>
+        <p>I lead by building communities, empowering others, and creating opportunities for everyone to grow together.</p>
+      </div>
+      <div class="define-img define-img--tilt-right">
+        <img src="images/mid-autumn festival.PNG" alt="Purposeful Leader">
+      </div>
     </div>
 
+    <div class="define-row fly-in">
+      <div class="define-text">
+        <h3>Social Contributor</h3>
+        <p>I create opportunities for students and visually impaired children to learn, connect, and grow through chess, board games, and inclusive learning experiences.</p>
+      </div>
+      <div class="define-img define-img--tilt-left">
+        <img src="images/event volunteer 3.jpg" alt="Social Contributor">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEO — white bg -->
+<section class="idx-section idx-section--alt">
+  <div class="idx-inner">
+    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
+      <iframe
+        src="https://www.youtube.com/embed/9n6OWteUCOw"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- BUTTONS — cream bg -->
+<section class="idx-section">
+  <div class="idx-inner" style="border-top:1px solid var(--border); padding-top:2rem;">
     <div class="btn-row">
       <a href="journey.html"    class="btn btn-primary">My Journey</a>
       <a href="projects.html"   class="btn btn-outline">My Resume</a>
       <a href="aspiration.html" class="btn btn-outline">My Aspiration</a>
     </div>
   </div>
-</div>
+</section>
 
 <footer>
   <p>© 2025 Võ Đình Khải My &nbsp;·&nbsp; Built with care.</p>
@@ -75,6 +131,21 @@
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fly-in, .fly-in-right').forEach((el, i) => {
+    el.dataset.delay = i * 120;
+    observer.observe(el);
+  });
 </script>
 </body>
 </html>

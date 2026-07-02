@@ -34,9 +34,8 @@
   </div>
 </nav>
 
-<div class="page">
+<div class="page aspiration-page">
   <span class="label">My Aspiration</span>
-  <h2>My Aspiration</h2>
 
   <p class="asp-quote">
     "True inclusion is not measured by how much support we provide, but by how many
@@ -48,7 +47,7 @@
   cultural exchange — not only helping them explore the world, but enabling them to
   shape it with their own voices.</p>
 
-  <div class="story-block" style="margin-top:3rem;">
+  <div class="story-block fly-in" style="margin-top:3rem;">
     <h3>Why Visually Impaired Children?</h3>
     <p>When I first worked with visually impaired children, I was struck not only by the
     challenges they faced, but also by how easily those challenges were overlooked: many
@@ -57,24 +56,31 @@
     <p>Yet what stood out to me most was not what they lacked, but what they had — talent,
     creativity, and a genuine eagerness to explore the world. I realised that the greatest
     barrier was never their potential, but the lack of opportunities for it to flourish.</p>
-    <p><strong>How can we empower visually impaired children to explore, create, and share
-    their voices?</strong></p>
+    <p style="font-size:1.5rem; font-style:italic; text-align:center; font-family:'Playfair Display',serif; color:var(--green-mid);">How can we empower visually impaired children to explore, create, and share their voices?</p>
   </div>
 
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <h3>The Challenges</h3>
-    <p><strong>01. Limited opportunities to explore</strong><br>
-    Many opportunities to explore places, cultures, and stories remain inaccessible —
-    primarily designed around sight.</p>
-    <p><strong>02. Limited opportunities for recreation</strong><br>
-    Accessible recreational products remain extremely limited. Educational board games for
-    visually impaired children are still nearly absent in Vietnam.</p>
-    <p><strong>03. Limited opportunities to participate</strong><br>
-    Visually impaired children are often viewed as recipients of support rather than
-    individuals with valuable stories, talents, and perspectives to share.</p>
+    <div class="model-cards">
+      <div class="model-card">
+        <div class="model-num">01</div>
+        <h3>Limited opportunities to explore</h3>
+        <p class="model-sub">Many opportunities to explore places, cultures, and stories remain inaccessible — primarily designed around sight.</p>
+      </div>
+      <div class="model-card">
+        <div class="model-num">02</div>
+        <h3>Limited opportunities for recreation</h3>
+        <p class="model-sub">Accessible recreational products remain extremely limited. Educational board games for visually impaired children are still nearly absent in Vietnam.</p>
+      </div>
+      <div class="model-card">
+        <div class="model-num">03</div>
+        <h3>Limited opportunities to participate</h3>
+        <p class="model-sub">Visually impaired children are often viewed as recipients of support rather than individuals with valuable stories, talents, and perspectives to share.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="story-block">
+  <div class="story-block fly-in">
     <span class="label">My Social Enterprise</span>
     <h3>Our Model: Learn · Create · Connect</h3>
     <p style="margin-bottom:.5rem;"><strong>Vision:</strong> To build a future where visually
@@ -84,40 +90,9 @@
     learning and play, enabling meaningful participation and fostering connections with the
     wider community through culture and storytelling.</p>
 
-    <div class="model-cards">
-      <div class="model-card">
-        <div class="model-num">01</div>
-        <h3>Learn &amp; Play</h3>
-        <p class="model-sub">Exploring the world through inclusive and engaging experiences</p>
-        <ul class="bullets">
-          <li>Educational boardgames</li>
-          <li>Audio learning resources</li>
-          <li>Cultural exploration workshops</li>
-        </ul>
-      </div>
-      <div class="model-card">
-        <div class="model-num">02</div>
-        <h3>Create</h3>
-        <p class="model-sub">Transforming learners into creators</p>
-        <ul class="bullets">
-          <li>Storytelling workshops</li>
-          <li>Podcasts &amp; digital content</li>
-        </ul>
-      </div>
-      <div class="model-card">
-        <div class="model-num">03</div>
-        <h3>Connect</h3>
-        <p class="model-sub">Amplifying voices through community connections</p>
-        <ul class="bullets">
-          <li>Cultural exchange events with international students</li>
-          <li>Showcases of children's stories and creative work</li>
-          <li>Youth cultural ambassador opportunities</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <img src="images/3Pillar.jpg" alt="Three pillar" style="display:block; margin:0 auto; mix-blend-mode:multiply;">
 
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <h3>Impact</h3>
     <div class="impact-grid">
       <div class="impact-card">
@@ -139,7 +114,7 @@
     </div>
   </div>
 
-  <div class="story-block">
+  <div class="story-block fly-in">
     <h3>Contributing to the SDGs</h3>
     <div class="sdg-row">
       <div class="sdg-card">
@@ -157,9 +132,14 @@
     </div>
   </div>
 
-  <div class="rmit-box">
-    <span class="label">Along with RMIT</span>
-    <h2>The Next Move</h2>
+  <div class="rmit-box fly-in-up">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.4rem;">
+      <div>
+        <span class="label" style="margin-bottom:.4rem;">Along with RMIT</span>
+        <h2 style="margin-bottom:0;">The Next Move</h2>
+      </div>
+      <img src="images/RMITlogo.jpg" alt="RMIT logo" style="height:96px; width:auto; display:block;">
+    </div>
     <p>Turning this vision into lasting impact requires more than passion — it requires
     the ability to understand people, communicate purpose, and inspire action. This is why
     I believe RMIT's Digital Marketing program is the ideal place for me to grow.</p>
@@ -188,6 +168,21 @@
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up').forEach((el, i) => {
+    el.dataset.delay = i * 100;
+    observer.observe(el);
+  });
 </script>
 </body>
 </html>

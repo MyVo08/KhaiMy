@@ -69,37 +69,108 @@
       </div>
     </div>
 
-    <!-- Add more chess competition photos below if needed -->
-    <div class="photos-strip" style="margin-top:1.5rem;">
-      <div class="photo-box">[ Chess photo 1 ]</div>
-      <div class="photo-box">[ Chess photo 2 ]</div>
+    <!-- Chess photo slideshow — 2 photos at a time, 9 total -->
+    <div class="chess-slideshow" style="margin-top:1.5rem;">
+      <div class="cs-track-wrap">
+        <div class="cs-track" id="csTrack">
+
+          <div class="cs-slide">
+            <div class="cs-pair">
+              <div class="cs-item">
+                <div class="cs-img-wrap"><img src="images/2015 national medal.jpg" alt="2015"></div>
+                <p class="cs-caption">2015 — First national medal</p>
+              </div>
+              <div class="cs-item">
+                <div class="cs-img-wrap"><img src="images/2016 first international.jpg" alt="2016"></div>
+                <p class="cs-caption">2016 - First international tournament</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-slide">
+            <div class="cs-pair">
+              <div class="cs-item">
+                <div class="cs-img-wrap"><img src="images/2018 asian youth chess.jpg" alt="2018"></div>
+                <p class="cs-caption">2018 - Asian Youth Chess Championship</p>
+              </div>
+              <div class="cs-item">
+                <div class="cs-img-wrap"><img src="images/2020 city level.jpg" alt="2020"></div>
+                <p class="cs-caption">2020 - City-level Chess Champion</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-slide">
+            <div class="cs-pair">
+              <div class="cs-item">
+                <div class="cs-img-wrap"><img src="images/2022 competing during covid19.jpg" alt="2022"></div>
+                <p class="cs-caption">2022 - Competing during Covid-19</p>
+              </div>
+              <div class="cs-item">
+                <div class="cs-img-wrap"><img src="images/2023 continue represent.jpg" alt="2023"></div>
+                <p class="cs-caption">2023 - Continue Representing Vietnam</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-slide">
+            <div class="cs-pair cs-pair--single">
+              <div class="cs-item">
+                <div class="cs-img-wrap"><img src="images/2024 national youth.jpg" alt="2024"></div>
+                <p class="cs-caption">2024 - National Youth Chess Championship</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /cs-track -->
+      </div><!-- /cs-track-wrap -->
+
+      <div class="cs-controls">
+        <button class="cs-btn" id="csPrev">&#8592;</button>
+        <div class="cs-dots" id="csDots"></div>
+        <button class="cs-btn" id="csNext">&#8594;</button>
+      </div>
+    </div><!-- /chess-slideshow -->
+  </div>
+
+  <div class="story-block">
+    <div class="story-img-row">
+      <div class="story-img-text">
+        <span class="label">The Turning Point</span>
+        <p>One of the most defining moments was at the 22nd Youth Southeast Asia Chess
+        Championship. After nearly a year of preparation, it was the tournament I had placed
+        the highest expectations on. I performed well throughout, but lost the decisive final
+        game. At the time, it felt as if everything I had worked for disappeared after a
+        single move.</p>
+        <p>Yet my family, coaches, and teammates reminded me that one result could never define
+        my worth. For the first time, I realised that confidence is not built by winning every
+        game, but by believing in myself even after losing one.</p>
+        <p>From then on, I began separating my self-worth from my results. I no longer played
+        simply to chase medals, but for the genuine love for the game. And this became my
+        most meaningful victory.</p>
+      </div>
+      <div class="story-img-side">
+        <img src="images/Laos.jpg" alt="The Turning Point">
+      </div>
     </div>
   </div>
 
   <div class="story-block">
-    <span class="label">The Turning Point</span>
-    <p>One of the most defining moments was at the 22nd Youth Southeast Asia Chess
-    Championship. After nearly a year of preparation, it was the tournament I had placed
-    the highest expectations on. I performed well throughout, but lost the decisive final
-    game. At the time, it felt as if everything I had worked for disappeared after a
-    single move.</p>
-    <p>Yet my family, coaches, and teammates reminded me that one result could never define
-    my worth. For the first time, I realised that confidence is not built by winning every
-    game, but by believing in myself even after losing one.</p>
-    <p>From then on, I began separating my self-worth from my results. I no longer played
-    simply to chase medals, but for the genuine love for the game. And this became my
-    most meaningful victory.</p>
-  </div>
-
-  <div class="story-block">
-    <span class="label">Beyond the Board</span>
-    <p>Looking back, I realise that chess was never my identity. It was just the first step
-    in discovering who I could become. Chess taught me resilience after failure, creativity
-    under pressure, and the courage to create opportunities not only for myself, but also
-    for others.</p>
-    <p>These lessons gradually extended beyond the chessboard — into the communities I
-    served, the initiatives I created, and the impact I hope to make in the future.</p>
-    <p><em>This portfolio tells the story of that journey.</em></p>
+    <div class="story-img-row">
+      <div class="story-img-side">
+        <img src="images/beyondtheBoard.jpg" alt="Beyond the Board">
+      </div>
+      <div class="story-img-text">
+        <span class="label">Beyond the Board</span>
+        <p>Looking back, I realise that chess was never my identity. It was just the first step
+        in discovering who I could become. Chess taught me resilience after failure, creativity
+        under pressure, and the courage to create opportunities not only for myself, but also
+        for others.</p>
+        <p>These lessons gradually extended beyond the chessboard — into the communities I
+        served, the initiatives I created, and the impact I hope to make in the future.</p>
+        <p><em>This portfolio tells the story of that journey.</em></p>
+      </div>
+    </div>
   </div>
 
   <!-- PIECES NAV — bottom of page, clickable -->
@@ -150,6 +221,48 @@
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  (function() {
+    const track  = document.getElementById('csTrack');
+    const slides = track ? track.querySelectorAll('.cs-slide') : [];
+    const dotsEl = document.getElementById('csDots');
+    const total  = slides.length;
+    let current  = 0;
+    let timer;
+
+    if (!total) return;
+
+    // build dots
+    slides.forEach((_, i) => {
+      const d = document.createElement('span');
+      d.className = 'cs-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+    });
+
+    function goTo(n) {
+      const next = (n + total) % total;
+      const wrap = Math.abs(next - current) > 1;
+      if (wrap) track.style.transition = 'none';
+      current = next;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      if (wrap) requestAnimationFrame(() => {
+        requestAnimationFrame(() => { track.style.transition = ''; });
+      });
+      dotsEl.querySelectorAll('.cs-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+      resetTimer();
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    document.getElementById('csPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('csNext').addEventListener('click', () => goTo(current + 1));
+    resetTimer();
+  })();
 </script>
 </body>
 </html>

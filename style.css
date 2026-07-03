@@ -476,6 +476,22 @@ ul.bullets li { font-size: .9rem; margin-bottom: .22rem; }
 .rook-page .stat-value  { font-size: 1.45rem; }
 .rook-page .stat-denom  { font-size: .5rem; }
 
+/* ── QUEEN PAGE ────────────────────────────────────────── */
+.queen-page .story-block p { font-size: 1.1rem; }
+.queen-page ul.bullets li  { font-size: 1.1rem; }
+.queen-page .story-block .label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6675rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  letter-spacing: normal;
+  text-transform: none;
+}
+.queen-page .story-img-side { flex: 0 0 15%; }
+.queen-page .event-block h4       { font-size: 1.15rem; }
+.queen-page blockquote   { border-radius: 20px; }
+.queen-page blockquote p { font-size: 1.1rem; }
+
 /* ── INDEX PAGE SECTIONS ───────────────────────────────── */
 .idx-section { width: 100%; padding: 15px 2rem; }
 .idx-section--alt { background: var(--white); }
@@ -565,6 +581,88 @@ ul.bullets li { font-size: .9rem; margin-bottom: .22rem; }
   line-height: 1.5;
   margin: 0;
 }
+
+/* ── STORY IMAGE ROW ──────────────────────────────────── */
+.story-img-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.story-img-text { flex: 1; }
+.story-img-text p { margin-bottom: .75rem; }
+.story-img-side {
+  flex: 0 0 25%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-dark);
+  border: 2px dashed var(--border);
+  aspect-ratio: 3/4;
+}
+.story-img-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.story-img-side img[src=""] { display: none; }
+
+@media (max-width: 640px) {
+  .story-img-row { flex-direction: column; }
+  .story-img-side { flex: 0 0 auto; width: 100%; aspect-ratio: 4/3; }
+}
+
+/* ── CHESS SLIDESHOW ───────────────────────────────────── */
+.chess-slideshow { position: relative; max-width: 80%; margin-left: auto; margin-right: auto; }
+.cs-track-wrap { overflow: hidden; border-radius: 12px; }
+.cs-track {
+  display: flex;
+  transition: transform .45s ease;
+}
+.cs-slide { min-width: 100%; box-sizing: border-box; }
+.cs-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.cs-pair--single { grid-template-columns: 1fr; max-width: 50%; }
+.cs-img-wrap {
+  aspect-ratio: 4/3;
+  background: var(--bg-dark);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px dashed var(--border);
+}
+.cs-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cs-img-wrap img[src=""] { display: none; }
+.cs-caption {
+  text-align: center;
+  font-size: .9rem;
+  color: var(--muted);
+  margin-top: .5rem;
+  font-style: italic;
+}
+.cs-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+.cs-btn {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.cs-btn:hover { background: var(--bg-dark); }
+.cs-dots { display: flex; gap: .5rem; }
+.cs-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background .2s;
+}
+.cs-dot.active { background: var(--green-mid); }
 
 /* ── ASPIRATION PAGE ───────────────────────────────────── */
 .aspiration-page > .label {

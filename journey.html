@@ -42,7 +42,7 @@
     I once believed that without chess, I had little to offer.
   </p>
 
-  <div class="story-block">
+  <div class="story-block fly-in">
     <span class="label">The First Move</span>
     <h3>2015 — Where It Began</h3>
     <p>In 2015, I first learned how the pieces move. Six months later, I competed in my
@@ -50,7 +50,7 @@
     <p>What began as a childhood hobby became the foundation of who I would become.</p>
   </div>
 
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <span class="label">A Decade on the Board</span>
     <div class="quote-photo">
       <blockquote>
@@ -133,7 +133,7 @@
     </div><!-- /chess-slideshow -->
   </div>
 
-  <div class="story-block">
+  <div class="story-block fly-in">
     <div class="story-img-row">
       <div class="story-img-text">
         <span class="label">The Turning Point</span>
@@ -155,7 +155,7 @@
     </div>
   </div>
 
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <div class="story-img-row">
       <div class="story-img-side">
         <img src="images/beyondtheBoard.jpg" alt="Beyond the Board">
@@ -263,6 +263,21 @@
     document.getElementById('csNext').addEventListener('click', () => goTo(current + 1));
     resetTimer();
   })();
+
+  const flyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        flyObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up').forEach((el, i) => {
+    el.dataset.delay = i * 80;
+    flyObserver.observe(el);
+  });
 </script>
 </body>
 </html>

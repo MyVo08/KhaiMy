@@ -54,7 +54,7 @@
   </div>
 
   <!-- ACADEMIC HIGHLIGHTS -->
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <span class="label">Academic Highlights</span>
     <div class="stats-row">
       <div class="stat-box">
@@ -76,7 +76,7 @@
   </div>
 
   <!-- SAT STORY -->
-  <div class="story-block">
+  <div class="story-block fly-in">
     <div class="story-img-row">
       <div class="story-img-text">
         <span class="label">My Journey to 1580</span>
@@ -87,6 +87,9 @@
         I took the test one final time and achieved a 1580.</p>
         <p>More than the score itself, the journey taught me that meaningful growth comes from
         patience, reflection, and the willingness to learn from every attempt.</p>
+        <button class="cert-btn" onclick="openLightbox('images/sat-score-report.pdf', 'SAT Score Report — 1580')">
+          View My Score Report
+        </button>
       </div>
       <div class="story-img-side">
         <img src="images/studySAT.jpg" alt="My Journey to 1580">
@@ -95,7 +98,7 @@
   </div>
 
   <!-- ECONOMICS STORY -->
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <div class="story-img-row">
       <div class="story-img-side">
         <img src="images/KTPL.jpg" alt="Second Prize">
@@ -111,6 +114,9 @@
         <p>It was also the first time I began to see business not only as a driver of economic
         growth, but also as a powerful tool for creating social impact — an idea that would
         later shape my aspiration to build a sustainable social enterprise.</p>
+        <button class="cert-btn" onclick="openLightbox('images/ktpl-certificate.jpg', 'Second Prize — City-level Economics &amp; Law Competition')">
+          View My Certificate
+        </button>
       </div>
     </div>
   </div>
@@ -165,6 +171,16 @@
 
 </div>
 
+<!-- LIGHTBOX MODAL -->
+<div id="certLightbox" class="lightbox-overlay" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+    <img id="lightboxImg" src="" alt="" style="display:none;">
+    <iframe id="lightboxPdf" src="" style="display:none;" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
 <footer>
   <p>© 2025 Võ Đình Khải My &nbsp;·&nbsp; Built with care.</p>
 </footer>
@@ -182,7 +198,30 @@
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.fly-in').forEach((el, i) => {
+  function openLightbox(src, caption) {
+    const img = document.getElementById('lightboxImg');
+    const pdf = document.getElementById('lightboxPdf');
+    document.getElementById('lightboxCaption').textContent = caption;
+    if (src.toLowerCase().endsWith('.pdf')) {
+      img.style.display = 'none'; img.src = '';
+      pdf.src = src;
+      pdf.style.display = 'block';
+    } else {
+      pdf.style.display = 'none'; pdf.src = '';
+      img.src = src;
+      img.style.display = 'block';
+    }
+    document.getElementById('certLightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('certLightbox').classList.remove('open');
+    document.getElementById('lightboxPdf').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up').forEach((el, i) => {
     el.dataset.delay = i * 120;
     observer.observe(el);
   });

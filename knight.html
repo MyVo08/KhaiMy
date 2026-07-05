@@ -202,6 +202,9 @@
 
     <p>The project demonstrated how educational games can foster accessible, engaging, and
     inclusive learning experiences through play for visually impaired learners.</p>
+    <button class="cert-btn" onclick="openLightbox('images/hcmc-fair-certificate.jpg', 'Third Prize — Ho Chi Minh City Science &amp; Engineering Fair')">
+      View My Certificate
+    </button>
   </div>
 
   <!-- REFLECTION -->
@@ -260,12 +263,43 @@
 
 </div>
 
+<!-- LIGHTBOX MODAL -->
+<div id="certLightbox" class="lightbox-overlay" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+    <img id="lightboxImg" src="" alt="" style="display:none;">
+    <iframe id="lightboxPdf" src="" style="display:none;" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
 <footer>
   <p>© 2025 Võ Đình Khải My &nbsp;·&nbsp; Built with care.</p>
 </footer>
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  function openLightbox(src, caption) {
+    const img = document.getElementById('lightboxImg');
+    const pdf = document.getElementById('lightboxPdf');
+    document.getElementById('lightboxCaption').textContent = caption;
+    if (src.toLowerCase().endsWith('.pdf')) {
+      img.style.display = 'none'; img.src = '';
+      pdf.src = src; pdf.style.display = 'block';
+    } else {
+      pdf.style.display = 'none'; pdf.src = '';
+      img.src = src; img.style.display = 'block';
+    }
+    document.getElementById('certLightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('certLightbox').classList.remove('open');
+    document.getElementById('lightboxPdf').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

@@ -54,7 +54,7 @@
   </div>
 
   <!-- LEM PROJECT OVERVIEW -->
-  <div class="story-block">
+  <div class="story-block fly-in">
     <span class="label">Lem Project</span>
     <blockquote>
       <p>Turning an award-winning research project into the first step of a long-term initiative.</p>
@@ -62,7 +62,7 @@
   </div>
 
   <!-- WHY I STARTED LEM -->
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <div class="story-img-row">
       <div class="story-img-side">
         <img src="images/LemLogo.jpg" alt="Lem Logo">
@@ -82,41 +82,62 @@
   <div class="story-block">
     <span class="label">Building Lem</span>
 
-    <div class="event-block">
+    <div class="event-block fly-in">
       <h4>Turning Research into Real Learning</h4>
-      <p>Rather than simply donating the game, we partnered with schools and learning centres to
-      organise interactive learning sessions where children explored geography through tactile
-      gameplay and audio storytelling. Every workshop became an opportunity to observe how children
-      learned, gather feedback, and continue refining both the game and the activities around it.</p>
+      <div class="story-img-row">
+        <div class="story-img-text">
+          <p>Rather than simply donating the game, we partnered with schools and learning centres to
+          organise interactive learning sessions where children explored geography through tactile
+          gameplay and audio storytelling. Every workshop became an opportunity to observe how children
+          learned, gather feedback, and continue refining both the game and the activities around it.</p>
 
-      <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin:1rem 0 .5rem;">Highlights</p>
-      <ul class="bullets">
-        <li>50-member volunteer team</li>
-        <li>Board games introduced to 10 schools and learning centres for visually impaired children</li>
-        <li>Interactive workshops at Nguyen Dinh Chieu School for the Blind</li>
-      </ul>
+          <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin:1rem 0 .5rem;">Highlights</p>
+          <ul class="bullets">
+            <li>50-member volunteer team</li>
+            <li>Board games introduced to 10 schools and learning centres for visually impaired children</li>
+            <li>Interactive workshops at Nguyen Dinh Chieu School for the Blind</li>
+          </ul>
+        </div>
+        <div class="story-img-side">
+          <img src="images/lem-real-learning.jpg" alt="Interactive learning session">
+        </div>
+      </div>
     </div>
 
-    <div class="event-block">
+    <div class="event-block fly-in-right">
       <h4>Designing with Accessibility in Mind</h4>
-      <p>One of the biggest lessons was learning that inclusion is found in the smallest details.</p>
-      <p>Every activity had to be redesigned so children with visual impairments could participate
-      independently. Before each workshop, our team tested games and activities while blindfolded,
-      helping us identify barriers we had overlooked and rethink instructions, materials, and
-      interactions from the children's perspective.</p>
-      <p>At the same time, I developed training sessions for volunteers, preparing them not only
-      to facilitate the board game but also to communicate confidently and respectfully with
-      visually impaired children.</p>
+      <div class="story-img-row">
+        <div class="story-img-side">
+          <img src="images/lem-accessibility.jpg" alt="Blindfold testing with volunteers">
+        </div>
+        <div class="story-img-text">
+          <p>One of the biggest lessons was learning that inclusion is found in the smallest details.</p>
+          <p>Every activity had to be redesigned so children with visual impairments could participate
+          independently. Before each workshop, our team tested games and activities while blindfolded,
+          helping us identify barriers we had overlooked and rethink instructions, materials, and
+          interactions from the children's perspective.</p>
+          <p>At the same time, I developed training sessions for volunteers, preparing them not only
+          to facilitate the board game but also to communicate confidently and respectfully with
+          visually impaired children.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="event-block">
+    <div class="event-block fly-in">
       <h4>Building Understanding Beyond the Classroom</h4>
-      <p>Creating an inclusive educational experience also meant helping the wider community
-      understand why it mattered.</p>
-      <p>We organised fundraising campaigns to produce and distribute more board games,
-      collaborated with schools and community partners, and created communication campaigns that
-      shared stories about visually impaired children — not to highlight their disabilities, but
-      to help others recognise their abilities, creativity, and potential.</p>
+      <div class="story-img-row">
+        <div class="story-img-text">
+          <p>Creating an inclusive educational experience also meant helping the wider community
+          understand why it mattered.</p>
+          <p>We organised fundraising campaigns to produce and distribute more board games,
+          collaborated with schools and community partners, and created communication campaigns that
+          shared stories about visually impaired children — not to highlight their disabilities, but
+          to help others recognise their abilities, creativity, and potential.</p>
+        </div>
+        <div class="story-img-side">
+          <img src="images/lem-community.jpg" alt="Community campaign">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -206,7 +227,7 @@
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.fly-in').forEach((el, i) => {
+  document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up').forEach((el, i) => {
     el.dataset.delay = i * 120;
     observer.observe(el);
   });

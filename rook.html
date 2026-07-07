@@ -129,6 +129,9 @@
         responsible for the full cycle of event planning and execution, from ideation to
         delivery, as the club did not have separate HR, logistics, or external relations
         teams.</p>
+        <button class="cert-btn" onclick="openLightbox('images/chess club grade 9.jpg', 'TĐN Chess Club — Head of Program (2022–2023)')">
+          View Certificate
+        </button>
       </div>
       <div class="story-img-side" style="aspect-ratio:unset; background:none; border:none;">
         <img src="images/headOfProgram.jpg" alt="Head of Program" style="height:auto; object-fit:contain;">
@@ -221,6 +224,9 @@
           <li><strong>Inclusive operations:</strong> I shifted the workflow from being Board of Directors-centred to a more shared model, encouraging members to participate and take more active roles.</li>
           <li><strong>Stronger communication and branding:</strong> I worked with the PR Department to improve event communication with clear themes, visuals, and post planning to strengthen the club's presence.</li>
         </ul>
+        <button class="cert-btn" onclick="openLightbox('images/chess club grade 11.jpg', 'TĐN Chess Club — President (2024–2025)')">
+          View Certificate
+        </button>
       </div>
     </div>
 
@@ -434,12 +440,43 @@
 
 </div>
 
+<!-- LIGHTBOX MODAL -->
+<div id="certLightbox" class="lightbox-overlay" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+    <img id="lightboxImg" src="" alt="" style="display:none;">
+    <iframe id="lightboxPdf" src="" style="display:none;" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
 <footer>
   <p>© 2025 Võ Đình Khải My &nbsp;·&nbsp; Built with care.</p>
 </footer>
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  function openLightbox(src, caption) {
+    const img = document.getElementById('lightboxImg');
+    const pdf = document.getElementById('lightboxPdf');
+    document.getElementById('lightboxCaption').textContent = caption;
+    if (src.toLowerCase().endsWith('.pdf')) {
+      img.style.display = 'none'; img.src = '';
+      pdf.src = src; pdf.style.display = 'block';
+    } else {
+      pdf.style.display = 'none'; pdf.src = '';
+      img.src = src; img.style.display = 'block';
+    }
+    document.getElementById('certLightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('certLightbox').classList.remove('open');
+    document.getElementById('lightboxPdf').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

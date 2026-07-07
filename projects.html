@@ -142,11 +142,14 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fly-in').forEach((el, i) => {
-    el.style.transitionDelay = (i * 0.1) + 's';
-    observer.observe(el);
-  });
+  }, { threshold: 0 });
+  const flyEls = document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up');
+  if ('IntersectionObserver' in window) {
+    flyEls.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; observer.observe(el); });
+    setTimeout(() => flyEls.forEach(el => el.classList.add('visible')), 3000);
+  } else {
+    flyEls.forEach(el => el.classList.add('visible'));
+  }
 </script>
 </body>
 </html>

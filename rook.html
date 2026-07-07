@@ -486,12 +486,16 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0 });
 
-  document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up').forEach((el, i) => {
-    el.dataset.delay = i * 80;
-    observer.observe(el);
-  });
+  const flyEls = document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up');
+  if ('IntersectionObserver' in window) {
+    flyEls.forEach((el, i) => { el.dataset.delay = i * 80; observer.observe(el); });
+    // Fail-safe: reveal anything still hidden after 3s (e.g. tall blocks on small screens)
+    setTimeout(() => flyEls.forEach(el => el.classList.add('visible')), 3000);
+  } else {
+    flyEls.forEach(el => el.classList.add('visible'));
+  }
 </script>
 </body>
 </html>

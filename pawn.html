@@ -201,7 +201,7 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0 });
 
   function openLightbox(src, caption) {
     const img = document.getElementById('lightboxImg');
@@ -226,10 +226,13 @@
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-  document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up').forEach((el, i) => {
-    el.dataset.delay = i * 120;
-    observer.observe(el);
-  });
+  const flyEls = document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up');
+  if ('IntersectionObserver' in window) {
+    flyEls.forEach((el, i) => { el.dataset.delay = i * 120; observer.observe(el); });
+    setTimeout(() => flyEls.forEach(el => el.classList.add('visible')), 3000);
+  } else {
+    flyEls.forEach(el => el.classList.add('visible'));
+  }
 </script>
 </body>
 </html>

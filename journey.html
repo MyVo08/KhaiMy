@@ -276,12 +276,15 @@
         flyObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0 });
 
-  document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up').forEach((el, i) => {
-    el.dataset.delay = i * 80;
-    flyObserver.observe(el);
-  });
+  const flyEls = document.querySelectorAll('.fly-in, .fly-in-right, .fly-in-up');
+  if ('IntersectionObserver' in window) {
+    flyEls.forEach((el, i) => { el.dataset.delay = i * 80; flyObserver.observe(el); });
+    setTimeout(() => flyEls.forEach(el => el.classList.add('visible')), 3000);
+  } else {
+    flyEls.forEach(el => el.classList.add('visible'));
+  }
 </script>
 </body>
 </html>

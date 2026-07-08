@@ -55,7 +55,7 @@
   </div>
 
   <!-- INTRO -->
-  <div class="story-block">
+  <div class="story-block fly-in">
     <div style="display:flex; gap:1.5rem; align-items:center;">
       <img src="images/ChongChongTrelogo.png" alt="Chong Chong Tre logo" style="flex:0 0 120px; width:120px; height:auto; display:block;">
       <p style="margin:0;">Chong Chong Tre is a non-profit educational initiative that provides free
@@ -86,7 +86,7 @@
   </div>
 
   <!-- MY ROLE -->
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <span class="label">My Role at Chong Chong Tre</span>
 
     <div class="event-block">
@@ -115,10 +115,9 @@
       <p>This was where I first learned how to understand different audiences, write
       hooks that captured attention, and create content that matched the project's
       message and tone.</p>
-      <a href="#" class="research-link">
-        <span class="rook-icon">📄</span>
+      <button class="cert-btn" onclick="openLightbox('images/certi 1.png', 'Chong Chong Tre — Content Writer Certificate')">
         View My Certificate
-      </a>
+      </button>
     </div>
 
     <div class="event-block">
@@ -135,6 +134,9 @@
         <li>Assigned tasks and coordinated deadlines across writers, designers, and video editors.</li>
         <li>Reviewed content, provided feedback and managed content publishing across social media platforms.</li>
       </ul>
+      <button class="cert-btn" onclick="openLightbox('images/certi 2.png', 'Chong Chong Tre — Social Content Certificate')">
+        View My Certificate
+      </button>
     </div>
 
     <div class="event-block">
@@ -149,22 +151,22 @@
         <li>Led monthly reflection meetings to identify challenges and propose actionable solutions.</li>
         <li>Cooperated with BOD to set content directions, guided brainstorming sessions, and ensured all content aligned with the project's communication goals.</li>
       </ul>
-      <a href="#" class="research-link">
-        <span class="rook-icon">📄</span>
-        View My Certificate
-      </a>
+      <div style="display:flex; flex-direction:column; gap:1rem; margin:1rem 0 0; align-items:center;">
+        <img src="images/content plan 1.jpg" alt="Content plan 1" style="width:75%; height:auto; display:block; border-radius:8px;">
+        <img src="images/content plan 2.jpg" alt="Content plan 2" style="width:75%; height:auto; display:block; border-radius:8px;">
+      </div>
     </div>
   </div>
 
   <!-- HIGHLIGHT CAMPAIGN -->
-  <div class="story-block">
+  <div class="story-block fly-in">
     <span class="label">Highlight Campaign</span>
 
     <div class="event-block">
       <h3>Trạm Hè (Summer Camp) 2025 — Volunteer Recruitment</h3>
 
       <p style="font-weight:600; color:var(--green-dark); font-size:.85rem; margin-bottom:.5rem;">Challenge</p>
-      <div class="insight-box fly-in">
+      <div class="insight-box">
         <p style="font-weight:600; margin-bottom:.5rem;">How do we encourage university students to volunteer for an event from a non-profit educational project?</p>
         Beyond promoting the event itself, we needed to understand what students were
         looking for — from extracurricular credits to a welcoming community where they
@@ -197,7 +199,7 @@
   </div>
 
   <!-- RESULTS -->
-  <div class="story-block">
+  <div class="story-block fly-in-right">
     <span class="label">Results</span>
     <div class="outcome-stats">
       <div class="outcome-stat">
@@ -216,9 +218,9 @@
   </div>
 
   <!-- REFLECTION -->
-  <div class="story-block">
+  <div class="story-block fly-in">
     <span class="label">What This Experience Taught Me</span>
-    <blockquote class="fly-in-right">
+    <blockquote>
       <p><strong>Communications:</strong> I learned how to find inspiration beyond
       social media trends, understand what different audiences cared about, and
       transform those insights into content ideas that communicated the project's
@@ -269,12 +271,43 @@
 
 </div>
 
+<!-- LIGHTBOX MODAL -->
+<div id="certLightbox" class="lightbox-overlay" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+    <img id="lightboxImg" src="" alt="" style="display:none;">
+    <iframe id="lightboxPdf" src="" style="display:none;" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
 <footer>
   <p>© 2025 Võ Đình Khải My &nbsp;·&nbsp; Built with care.</p>
 </footer>
 
 <script>
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  function openLightbox(src, caption) {
+    const img = document.getElementById('lightboxImg');
+    const pdf = document.getElementById('lightboxPdf');
+    document.getElementById('lightboxCaption').textContent = caption;
+    if (src.toLowerCase().endsWith('.pdf')) {
+      img.style.display = 'none'; img.src = '';
+      pdf.src = src; pdf.style.display = 'block';
+    } else {
+      pdf.style.display = 'none'; pdf.src = '';
+      img.src = src; img.style.display = 'block';
+    }
+    document.getElementById('certLightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('certLightbox').classList.remove('open');
+    document.getElementById('lightboxPdf').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
